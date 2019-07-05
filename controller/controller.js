@@ -17,15 +17,23 @@ const controller = {
         }
     },
 
-    login:async(req,res)=>{
-        let {user,password} = req.body;
-        let us = await User.findOne({user,password});
+    login: async (req, res) => {
+        let { user, password } = req.body;
+        let us = await User.findOne({ user, password });
         res.send(us);
     },
-    adduser:async(req,res)=>{
-            const {user,password} = req.body;
-            let us = await new User({_id:new mongoose.Types.ObjectId(),user,password});
-            us.save().then(r => res.send(r))
+    adduser: async (req, res) => {
+        const { user, password } = req.body;
+        let us = await new User({ _id: new mongoose.Types.ObjectId(), user, password });
+        us.save().then(r => res.send(r))
+
+    },
+    getOnUser: (req, res) => {
+        let { user } = req.params;
+        console.log(user, "aquii")
+        User.findOne({ user }).then(r => {
+            res.send(r);
+        })
     },
     //Remove 
     remove: (req, res) => {

@@ -8,7 +8,7 @@ let router = express.Router();
 router.get("/get",(req,res)=> controller.getBook.get(req,res));
 router.get("/get/:id",(req,res)=>controller.getBook.filter(req,res) );
 router.get("/get/:id/:bookid",(req,res)=>controller.getBook.filterOne(req,res) );
-
+router.get("/validate/:user",(req,res)=>controller.getOnUser(req,res))
 
 //Post
 router.post("/enteruser",(req,res)=> controller.login(req,res));

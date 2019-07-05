@@ -5,7 +5,7 @@ class Login {
         this.render();
     }
     render() {
-        let main = snip("div", this.board).css({background: "red", minHeight: "200px",width: "100%",display: "flex",alignItems: "center" });
+        let main = snip("div", this.board).css({ background: "red", minHeight: "200px", width: "100%", display: "flex", alignItems: "center" });
 
         let log = snip("div", main).attr({ class: "login" });
         let banner = snip("div", main).attr({ class: "banner" });
@@ -24,13 +24,13 @@ class Login {
 
         btn.onclick = (ev) => {
             ev.preventDefault();
-            if(user.value.length > 0 && pass.value.length > 0){
+            if (user.value.length > 0 && pass.value.length > 0) {
 
-                Provider.post("/enteruser",{user:user.value.trim(),password:pass.value}).then(res =>{
+                Provider.post("/enteruser", { user: user.value.trim(), password: pass.value }).then(res => {
                     localStorage.session = JSON.stringify(res);
                     location.reload();
                 })
-            }else alert("Fill in all the fields");
+            } else alert("Fill in all the fields");
 
         }
 
@@ -69,22 +69,22 @@ class Login {
         btn.onclick = (ev) => {
             ev.preventDefault();
 
-            if(user.value.length > 0 && pass.value.length > 0){
-                Provider.post("/adduser",{user:user.value,password:pass.value}).then(res =>{
-    
-                        new Modal("Success", "Do you want to continue?", (modal) => {
+            if (user.value.length > 0 && pass.value.length > 0) {
+
+                console.log("hola")
+                Provider.get("/validate/" + user.value).then(r => {
+                    console.log(r, r.length)
+                    if (r.user == user.value) alert("Este usuario ya esta registrado");
+
+                    else if (Object.keys(r).length <= 0) Provider.post("/adduser", { user: user.value, password: pass.value })
+                        .then(res => new Modal("Success", "Do you want to continue?", (modal) => {
                             modal.remove();
                             singup.click();
-                        }).succes();
-                    
-                })
+                        }).succes())
 
-            }else alert("Fill in all the fields");
-            
+                });
 
-            // new SetLogin(user.value, pass.value).register().then(res => {
-
-            // })
+            } else alert("Fill in all the fields");
         };
 
         let containerRegister = snip("div", reg).attr({ class: "Register" });
