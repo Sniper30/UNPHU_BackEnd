@@ -29,11 +29,13 @@ class Search {
 
       if (a.users !== null) btn_vot.textContent = a.users.length;
       else btn_vot.textContent = 0;
+      snip("i",btn_vot).css({color:"#c0392b"}).attr({class:"fas fa-heart"});
       btn_vot.onclick = () => {
 
         Provider.put("/update/" + book._id, { users: JSON.parse(localStorage.session)._id }).then(r => {
           console.log(r)
           btn_vot.textContent = r[0].users.length;
+          snip("i",btn_vot).css({color:"#c0392b"}).attr({class:"fas fa-heart"});
         })
       }
 
