@@ -37,9 +37,9 @@ class Menu{
                 icon:"fas fa-book-open"
             }
         ].forEach((option, i)=>{
-            let li = snip("li",ul).attr({onclick:option.cb.bind(this)});
-            li.textContent = option.title;
-            let icon = snip("i",li).attr({class:option.icon})
+             let li = snip("li",ul).attr({onclick:option.cb.bind(this)});
+             li.textContent = option.title;
+             snip("i",li).attr({class:option.icon})
         });
 
 

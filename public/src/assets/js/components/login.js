@@ -27,8 +27,13 @@ class Login {
             if (user.value.length > 0 && pass.value.length > 0) {
 
                 Provider.post("/enteruser", { user: user.value.trim(), password: pass.value }).then(res => {
-                    localStorage.session = JSON.stringify(res);
-                    location.reload();
+          
+                    if(Object.keys(res).length <= 0) alert("Password o user incorrect");
+                    else{
+                        localStorage.session = JSON.stringify(res);
+                        location.reload();
+
+                    }
                 })
             } else alert("Fill in all the fields");
 
@@ -71,9 +76,8 @@ class Login {
 
             if (user.value.length > 0 && pass.value.length > 0) {
 
-                console.log("hola")
                 Provider.get("/validate/" + user.value).then(r => {
-                    console.log(r, r.length)
+                   
                     if (r.user == user.value) alert("Este usuario ya esta registrado");
 
                     else if (Object.keys(r).length <= 0) Provider.post("/adduser", { user: user.value, password: pass.value })
@@ -94,19 +98,19 @@ class Login {
         singup.textContent = "Sing In";
 
         singup.onclick = () => {
-            reg.classList.remove("active");
-            reg.classList.add("inactive");
-            let log = document.querySelector(".login");
+             reg.classList.remove("active");
+             reg.classList.add("inactive");
+                 let log = document.querySelector(".login");
 
-            reg.addEventListener("animationend", () => {
-                log.classList.remove("inactive");
-                log.classList.add("active");
-            });
+             reg.addEventListener("animationend", () => {
+                 log.classList.remove("inactive");
+                 log.classList.add("active");
+             });
 
-            log.addEventListener("animationend", () => {
-                document.body.innerHTML = "";
-                this.render();
-            });
+             log.addEventListener("animationend", () => {
+                 document.body.innerHTML = "";
+                 this.render();
+             });
         }
 
     }
