@@ -6,7 +6,7 @@ class Book{
      add(){
 
          let container = snip("div",this.board).attr({class:"Container"});
-          Main = snip("div",container).attr({class:"modaladd"})
+         let Main = snip("div",container).attr({class:"modaladd"})
          let head = snip("div",Main).attr({class:"head"}).textContent = "ADD BOOK";
          let form = snip("form",Main);
 
