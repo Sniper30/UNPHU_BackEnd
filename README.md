@@ -1,9 +1,9 @@
-##Aplicación para registrar libros y compartirlos con otros usuarios.
+## Aplicación para registrar libros y compartirlos con otros usuarios.
 
 
 
 
-##Para Iniciar el proyecto debe hacer uso de los siguientes.
+## Para Iniciar el proyecto debe hacer uso de los siguientes.
 
 1 - Tener instalado nodejs
 
