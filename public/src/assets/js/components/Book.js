@@ -1,8 +1,7 @@
 class Book{
 
-    constructor(board,title){
+    constructor(board){
         this.board = board;
-        this.title = title
     }
     add(){
         console.log("desde add :", this.board)
@@ -10,7 +9,7 @@ class Book{
 
         let Main = snip("div",container).attr({class:"modaladd"})
 
-        let head = snip("div",Main).attr({class:"head"}).textContent = this.title;
+        let head = snip("div",Main).attr({class:"head"}).textContent = "ADD BOOK";
 
         let form = snip("form",Main);
 
@@ -61,7 +60,7 @@ class Book{
     
             let Main = snip("div",container).attr({class:"modaladd"})
     
-            let head = snip("div",Main).attr({class:"head"}).textContent = this.title;
+            let head = snip("div",Main).attr({class:"head"}).textContent = "UPDATE BOOK";
     
             let form = snip("form",Main);
     
@@ -72,10 +71,28 @@ class Book{
             .attr({placeholder:"Insert description here...",rows:"4",cols:"50",value:res[0].description});
     
             let footer = snip("footer",Main).attr({class:"footer"});
-    
-            snip("button",footer).attr({onclick:update}).textContent = "Save";
-            snip("button",footer).attr({onclick:remove}).textContent = "Delete";
-            snip("button",footer).attr({onclick:()=>container.remove()}).textContent = "Cancel";
+
+            [
+                {
+                    title:"Save",
+                    cb:update,
+                    background:"#30BF48"
+                },
+                {
+                    title:"Delete",
+                    cb:remove,
+                    background:"#c0392b"
+                }
+                ,
+                {
+                    title:"Cancel",
+                    cb:()=>container.remove(),
+                    background:"#d35400"
+                }
+            ].forEach(btn => snip("button",footer).attr({onclick:btn.cb}).css({background:btn.background}).textContent = btn.title )
+            // snip("button",footer).attr({onclick:update}).textContent = "Save";
+            // snip("button",footer).attr({onclick:remove}).textContent = "Delete";
+            // snip("button",footer).attr({onclick:}).textContent = "Cancel";
 
             function update(){
 

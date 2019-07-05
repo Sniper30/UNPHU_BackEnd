@@ -55,6 +55,11 @@
 .Vertical-menu ul li{
     padding: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    font-size: 17px;
+    align-items: center;
 }
 
 .logOut{
@@ -63,6 +68,9 @@
     height: 50px;
     background: #c0392b;
     padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .close{

@@ -14,39 +14,51 @@ class Menu{
     }
 
     vertical(){
-        let vertical_menu = snip("div",this.board).attr({class:"Vertical-menu"});
-        let btnOpen = snip("button",vertical_menu).attr({class:"btnOpen"});
+        let vertical_menu = snip("div",this.board).attr({class:"Vertical-menu close"});
+        let btnOpen = snip("button",vertical_menu).attr({class:"btnOpen"})
+
+        snip("i",btnOpen).attr({class:"far fa-arrow-alt-circle-right"}).css({fontSize:"34px"});
 
         let ul = snip("ul",vertical_menu);
         [
             {
                 title:"ADD BOOK",
-                cb:addBook
+                cb:addBook,
+                icon:"fas fa-plus"
             }, 
             {
                 title:"MY BOOKS",
-                cb:viewmybook
+                cb:viewmybook,
+                icon:"fas fa-book"
             },
             {
                 title:"BOOKS",
-                cb:viewAllbook
+                cb:viewAllbook,
+                icon:"fas fa-book-open"
             }
         ].forEach((option, i)=>{
             let li = snip("li",ul).attr({onclick:option.cb.bind(this)});
             li.textContent = option.title;
+            let icon = snip("i",li).attr({class:option.icon})
         });
 
 
-        snip("div",vertical_menu).attr({class:"logOut",onclick:LogOut}).css({cursor:"pointer"}).textContent = "Log Out";
+        let logout = snip("div",vertical_menu).attr({class:"logOut",onclick:LogOut}).css({cursor:"pointer"});
+        logout.textContent = "Log Out";
+        snip("i",logout).attr({class:"fas fa-sign-out-alt"}).css({marginLeft:"14px"})
 
 
         btnOpen.addEventListener("click",()=>{
             if(vertical_menu.classList.contains("close")){
                 vertical_menu.classList.remove("close");
                 vertical_menu.classList.add("open");
+                btnOpen.innerHTML = "";
+                snip("i",btnOpen).attr({class:"far fa-arrow-alt-circle-left"}).css({fontSize:"34px"});
             }else{
                 vertical_menu.classList.remove("open");
                 vertical_menu.classList.add("close");
+                btnOpen.innerHTML = "";
+                snip("i",btnOpen).attr({class:"far fa-arrow-alt-circle-right"}).css({fontSize:"34px"});
             }
         });
 

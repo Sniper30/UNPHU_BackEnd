@@ -36,9 +36,12 @@
 
 .date button{
     border: none;
-    width: 50px;
+    width: 40px;
     height: 30px;
     border-radius: 5px;
     background: #000000;
     color: #ffffff;
+    display:flex;
+    justify-content: space-around;
+
 }
