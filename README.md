@@ -3,7 +3,7 @@
 
 
 
-## Para Iniciar el proyecto debe hacer uso de los siguientes.
+## Para Iniciar el proyecto debe hacer uso de los siguientes pasos.
 
 1 - Tener instalado nodejs
 
