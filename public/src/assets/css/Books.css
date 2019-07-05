@@ -1,0 +1,44 @@
+.Showbooks{
+    /* background: linear-gradient(142deg, rgba(214,210,210,1) 3%, rgba(252,244,245,1) 100%); */
+    background: linear-gradient(142deg, rgba(214,210,210,1) 23%, rgba(252,244,245,1) 100%);
+    width: 100%;
+    height: calc(100vh - 62px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Showbooks .content{
+    /* background: rebeccapurple; */
+    width: 70%;
+    height: 500px;
+    /* background: red; */
+    overflow-y: auto;
+    overflow-x: none;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.Showbooks .content .thumbals{
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    width: 98%;
+    height: 130px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.date button{
+    border: none;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    background: #000000;
+    color: #ffffff;
+}

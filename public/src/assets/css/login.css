@@ -1,0 +1,120 @@
+body{
+    font-family: 'Poppins', serif;
+    font-weight: normal;
+    font-style: normal;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    background: #000000;
+    width: 25%;
+    height: 100vh;
+    color: #ffffff;
+    align-items: flex-start;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    /* font-family: "Poppins script=all rev=1", "Adobe Blank"; */
+}
+
+.login span, .New_register span{
+    font-size: 35px;
+    font-weight: 100;
+    padding-left: 8px;
+    margin-bottom: 20px;
+}
+
+.New_register{
+    display: flex;
+    flex-direction: column;
+    background: #000000;
+    width: 25%;
+    height: 100vh;
+    color: #ffffff;
+    align-items: flex-start;
+    padding: 10px;
+    position: absolute;
+    left: -25%; 
+    top:0;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background: blue;
+    background-image: url("../img/block.jpg");
+    background-size: cover;
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+form * {
+    margin: 10px;
+    border-radius: 3px;
+    outline: none;
+    color: #ffffff;
+    
+}
+form input{
+    padding-left: 10px;
+}
+
+form input{
+    border:1px solid #ffffff73;
+    height: 30px;
+    background: #000000;
+    
+    
+}
+
+form button{
+    background: #30BF48;
+    border:none;
+    height: 30px;
+    
+}
+
+    
+.Register {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    color: #005DFF;
+}
+.Register a{
+    color: #005DFF;
+    text-decoration: none;
+}
+.Register > *{
+    margin-bottom: 10px;
+}
+
+.inactive{
+    position: absolute;
+   animation:.5s inactive forwards;
+}
+@keyframes inactive{
+    from{
+     left: 0;
+    }
+    to{
+        left: -25%;
+    }
+}
+
+.active{
+    position: absolute;
+   animation:.5s active forwards;
+}
+@keyframes active{
+    from{
+        left: -25%;
+    }
+    to{
+        left: 0;
+    }
+}

@@ -1,0 +1,71 @@
+.Container{
+    background: rgba(0, 0, 0, .0);
+    position:absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 1s Open forwards;
+}
+
+@keyframes Open{
+
+    from{
+        background: rgba(0, 0, 0, .0);
+    }
+    to{
+        background: rgba(0, 0, 0, .5);
+    }
+
+}
+
+.Modal{
+    width: 25%;
+    height: 200px;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.head{
+    width: 100%;
+    min-height: 48px;
+    background: #30BF48;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 5px 5px 0 0 ;
+}
+.body{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer{
+    width: 100%;
+    min-height: 48px;
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer > button{
+    margin-right: 8px;
+    border:none;
+    padding: 10px;
+    border-radius: 5px;
+}
